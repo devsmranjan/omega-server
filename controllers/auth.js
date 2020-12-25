@@ -6,7 +6,7 @@ const EmailVerificationToken = require('../models/EmailVerificationToken.model')
 const httpStatusCodes = require('../utils/httpStatusCodes');
 const messages = require('../utils/messages');
 const apiEndpoints = require('../utils/apiEndpoints');
-const constants = require('../utils/constants');
+// const constants = require('../utils/constants');
 
 // auth endpoint
 exports.authEndpoint = (req, res) => {
@@ -113,7 +113,7 @@ exports.verifyEmail = async (req, res) => {
 
     if (!isRequestFromClient)
         return res.redirect(
-            `${constants.CLIENT_URL}${apiEndpoints.CLIENT_EMAIL_VERIFICATION_PATH}/${req.params.token}`
+            `${process.env.CLIENT_URL}${apiEndpoints.CLIENT_EMAIL_VERIFICATION_PATH}/${req.params.token}`
         );
 
     if (!req.params.token) {
@@ -261,7 +261,7 @@ exports.checkResetPasswordLink = async (req, res) => {
 
     if (!isRequestFromClient)
         return res.redirect(
-            `${constants.CLIENT_URL}${apiEndpoints.CLIENT_RESET_PASSWORD_PATH}/${token}`
+            `${process.env.CLIENT_URL}${apiEndpoints.CLIENT_RESET_PASSWORD_PATH}/${token}`
         );
 
     try {
