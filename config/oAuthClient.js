@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 const apiEndpoints = require('../utils/apiEndpoints');
 
 let oAuth2Client = {
-    redirectURL: `${process.env.CLIENT_URL}${process.env.CLIENT_ROUTE}${apiEndpoints.SUBSCRIPTIONS_ENDPOINT}${apiEndpoints.SUBSCRIPTIONS_ADD_GOOGLE_CALLBACK}`,
+    redirectURL: `${process.env.CLIENT_URL}${process.env.SERVER_ROUTE}${apiEndpoints.SUBSCRIPTIONS_ENDPOINT}${apiEndpoints.SUBSCRIPTIONS_ADD_GOOGLE_CALLBACK}`,
 };
 
 oAuth2Client.auth = new google.auth.OAuth2(
