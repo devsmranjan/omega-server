@@ -350,6 +350,7 @@ const sendEmail = async (user, req, res) => {
             req.protocol +
             '://' +
             req.headers.host +
+            
             apiEndpoints.AUTH_VERIFY_FULL +
             emailVerficationToken.token;
 

@@ -52,7 +52,7 @@ router.post(
     Auth.resendEmailVerificationToken
 );
 
-// Recover - When user click for recover poassword
+// Recover - When user click for recover password
 router.post(
     apiEndpoints.AUTH_RECOVER,
     [check('email').isEmail().withMessage('Enter a valid email address')],
