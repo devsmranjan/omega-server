@@ -5,7 +5,7 @@ module.exports = {
     AUTH_SIGNUP: '/signup',
     AUTH_LOGIN: '/login',
     AUTH_VERIFY_EMAIL: '/verify/:token',
-    AUTH_VERIFY_FULL: `${process.env.API_ENDPOINT}/auth/verify/`,
+    AUTH_VERIFY_FULL: `${process.env.CLIENT_ROUTE}${process.env.API_ENDPOINT}/auth/verify/`,
     AUTH_VERIFY_EMAIL_RESEND: '/resend',
     AUTH_RECOVER: '/recover',
     AUTH_CHECK_RESET_LINK: '/reset/:token',
